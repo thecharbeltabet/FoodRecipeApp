@@ -18,7 +18,7 @@ class SignInFragment : Fragment() {
 
         val binding: FragmentSignInBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_sign_in, container, false)
 
-        binding.button.setOnClickListener{ view: View ->
+        binding.logInButton.setOnClickListener{ view: View ->
             Navigation.findNavController(view).navigate(R.id.action_signInFragment_to_mainScreenFragment)
         }
 
