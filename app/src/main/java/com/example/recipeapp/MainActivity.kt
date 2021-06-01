@@ -20,6 +20,10 @@ class MainActivity : AppCompatActivity() {
 
 
         populateCards(adapter)
+
+        binding.floatingAddButton.setOnClickListener{
+            adapter.addData(Recipe("Bruger", 1212, ""))
+        }
     }
 
     private fun populateCards(adapter:RecyclerViewAdapter) {
@@ -27,6 +31,6 @@ class MainActivity : AppCompatActivity() {
         for(i in 1..10){
             recipeList.add(Recipe("Burger", i, ""))
         }
-        adapter.setData(recipeList.toList())
+        adapter.setData(recipeList.toMutableList())
     }
 }

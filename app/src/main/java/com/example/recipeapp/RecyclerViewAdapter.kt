@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.item_layout.view.*
 
 class RecyclerViewAdapter:RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(){
 
-    private var recipeList = emptyList<Recipe>()
+    private var recipeList = mutableListOf<Recipe>()
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
     }
@@ -31,8 +31,12 @@ class RecyclerViewAdapter:RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>()
         }
     }
 
-    fun setData(recipes:List<Recipe>){
+    fun setData(recipes:MutableList<Recipe>){
         recipeList = recipes
+        notifyDataSetChanged()
+    }
+    fun addData(recipe:Recipe){
+        recipeList.add(recipe)
         notifyDataSetChanged()
     }
 }
