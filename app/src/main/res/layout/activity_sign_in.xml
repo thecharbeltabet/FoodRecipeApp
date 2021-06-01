@@ -38,11 +38,12 @@
             android:fontFamily="@font/montserrat_black"
             android:text="Welcome Foodies"
             android:textSize="35sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/mainView"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.177" />
+            app:layout_constraintVertical_bias="0.654" />
 
         <TextView
             android:id="@+id/usernameLabelText"
@@ -50,12 +51,12 @@
             android:layout_height="wrap_content"
             android:text="Username"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcomeText"
-            app:layout_constraintVertical_bias="0.046" />
+            app:layout_constraintBottom_toTopOf="@+id/emailInput"
+            app:layout_constraintEnd_toEndOf="@+id/emailInput"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/emailInput"
+            app:layout_constraintTop_toTopOf="@+id/mainView"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/passwordLabelText"
@@ -63,12 +64,12 @@
             android:layout_height="wrap_content"
             android:text="Password"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.26"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailInput"
-            app:layout_constraintVertical_bias="0.038" />
+            app:layout_constraintBottom_toTopOf="@+id/passwordInput"
+            app:layout_constraintEnd_toEndOf="@+id/passwordInput"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/passwordInput"
+            app:layout_constraintTop_toTopOf="@+id/mainView"
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/logInButton"
@@ -78,11 +79,11 @@
             android:text="Log In"
             android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordInput"
-            app:layout_constraintVertical_bias="0.056" />
+            app:layout_constraintEnd_toEndOf="@+id/mainView"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="@+id/mainView"
+            app:layout_constraintTop_toTopOf="@+id/mainView"
+            app:layout_constraintVertical_bias="0.398" />
 
         <EditText
             android:id="@+id/passwordInput"
@@ -92,9 +93,8 @@
             android:ems="10"
             android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.41"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/mainView"
+            app:layout_constraintStart_toStartOf="@+id/mainView"
             app:layout_constraintTop_toBottomOf="@+id/emailInput"
             app:layout_constraintVertical_bias="0.121" />
 
@@ -104,12 +104,11 @@
             android:layout_height="wrap_content"
             android:text="Sign Up"
             android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logInButton"
-            app:layout_constraintVertical_bias="0.04" />
+            app:layout_constraintBottom_toBottomOf="@+id/mainView"
+            app:layout_constraintEnd_toEndOf="@+id/mainView"
+            app:layout_constraintStart_toStartOf="@+id/mainView"
+            app:layout_constraintTop_toTopOf="@+id/mainView"
+            app:layout_constraintVertical_bias="0.97" />
 
         <EditText
             android:id="@+id/emailInput"
@@ -119,23 +118,23 @@
             android:ems="10"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcomeText"
+            app:layout_constraintEnd_toEndOf="@+id/mainView"
+            app:layout_constraintStart_toStartOf="@+id/mainView"
+            app:layout_constraintTop_toTopOf="@+id/mainView"
             app:layout_constraintVertical_bias="0.117" />
 
         <TextView
             android:id="@+id/signInWithText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
             android:text="Sign In With:"
             android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signUpText"
-            app:layout_constraintVertical_bias="0.16000003" />
+            app:layout_constraintTop_toBottomOf="@+id/mainView"
+            app:layout_constraintVertical_bias="0.0" />
 
         <View
             android:id="@+id/googleView"
@@ -145,22 +144,20 @@
             android:clickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.252"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signUpText"
-            app:layout_constraintVertical_bias="0.65" />
+            app:layout_constraintTop_toBottomOf="@+id/signInWithText"
+            app:layout_constraintVertical_bias="0.327" />
 
         <ImageView
             android:id="@+id/googleLogo"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:clickable="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.281"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/googleView"
-            app:layout_constraintVertical_bias="0.429"
+            app:layout_constraintBottom_toBottomOf="@+id/googleView"
+            app:layout_constraintEnd_toEndOf="@+id/googleView"
+            app:layout_constraintStart_toStartOf="@+id/googleView"
+            app:layout_constraintTop_toBottomOf="@+id/googleLabel"
             app:srcCompat="@drawable/ic_google__g__logo" />
 
         <TextView
@@ -169,47 +166,10 @@
             android:layout_height="wrap_content"
             android:text="Google"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/googleLogo"
+            app:layout_constraintBottom_toBottomOf="@+id/googleView"
             app:layout_constraintEnd_toEndOf="@+id/googleView"
             app:layout_constraintStart_toStartOf="@+id/googleView"
-            app:layout_constraintTop_toTopOf="@+id/googleView" />
-
-        <View
-            android:id="@+id/facebookView"
-            android:layout_width="114dp"
-            android:layout_height="127dp"
-            android:background="@drawable/rounded_square"
-            android:clickable="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.75"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signUpText"
-            app:layout_constraintVertical_bias="0.65" />
-
-        <ImageView
-            android:id="@+id/facebookLogo"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:clickable="true"
-            app:layout_constraintBottom_toBottomOf="@+id/facebookView"
-            app:layout_constraintEnd_toEndOf="@+id/facebookView"
-            app:layout_constraintHorizontal_bias="0.431"
-            app:layout_constraintStart_toStartOf="@+id/facebookView"
             app:layout_constraintTop_toTopOf="@+id/googleView"
-            app:layout_constraintVertical_bias="0.807"
-            app:srcCompat="@drawable/ic_facebook_f_logo" />
-
-        <TextView
-            android:id="@+id/facebookLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Facebook"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/facebookView"
-            app:layout_constraintEnd_toEndOf="@+id/facebookView"
-            app:layout_constraintStart_toStartOf="@+id/facebookView"
-            app:layout_constraintTop_toTopOf="@+id/facebookView"
             app:layout_constraintVertical_bias="0.107" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

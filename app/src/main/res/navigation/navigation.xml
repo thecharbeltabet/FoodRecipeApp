@@ -2,10 +2,4 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation"
-    app:startDestination="@id/mainScreenFragment">
-    <fragment
-        android:id="@+id/mainScreenFragment"
-        android:name="com.example.recipeapp.MainScreenFragment"
-        android:label="MainScreenFragment" />
-</navigation>
+    android:id="@+id/navigation" />
