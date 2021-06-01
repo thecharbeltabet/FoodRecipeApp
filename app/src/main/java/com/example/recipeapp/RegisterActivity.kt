@@ -40,10 +40,6 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-
-
-
-
     private fun register(){
         if(!TextUtils.isEmpty(binding.emailInput.text.toString()) && !TextUtils.isEmpty(binding.passwordInput.text.toString()))
             firebaseAuth.createUserWithEmailAndPassword(binding.emailInput.text.toString().trim(),binding.passwordInput.text.toString().trim())

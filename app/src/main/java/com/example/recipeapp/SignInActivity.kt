@@ -44,7 +44,7 @@ class SignInActivity : AppCompatActivity() {
 
         binding.logInButton.setOnClickListener{
             emailSignIn()
-            //finish()
+            finish()
         }
 
         binding.googleLogo.setOnClickListener{
