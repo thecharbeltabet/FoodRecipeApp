@@ -13,7 +13,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="370dp"
+        android:layout_width="360dp"
         android:layout_height="175dp">
 
         <LinearLayout
@@ -31,7 +31,7 @@
             app:layout_constraintVertical_bias="0.0">
 
             <TextView
-                android:id="@+id/StudentName"
+                android:id="@+id/DishName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Dish Name"
@@ -39,7 +39,7 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/StudentID"
+                android:id="@+id/RecipeID"
                 android:layout_width="match_parent"
                 android:layout_height="39dp"
                 android:text="Dish discription"
