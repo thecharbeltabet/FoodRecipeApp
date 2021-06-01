@@ -5,35 +5,30 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.api.Distribution
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
-    private val firebaseRepo: FirebaseRepo = FirebaseRepo()
-    private var recipeList: List<Recipe> = ArrayList()
-    private val recipeListAdapter : RecipeListAdapter = RecipeListAdapter(recipeList)
-
+    private lateinit var recipeViewModel: RecipeViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        loadPostData()
-
+        val query = FirebaseFirestore.getInstance().collection("recipes").orderBy("name")
+        val options = FirestoreRecyclerOptions.Builder<Recipe>().setQuery(query, Recipe::class.java).build()
+        val adapter = RecipesListAdapter(options)
+        recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = recipeListAdapter
+        adapter.startListening()
+
+        recipeViewModel = ViewModelProvider(this).get(RecipeViewModel::class.java)
     }
 
-    private fun loadPostData(){
-        firebaseRepo.getPostList().addOnCompleteListener{
-            if(it.isSuccessful){
-                recipeList = it.result!!.toObjects(Recipe::class.java)
-                recipeListAdapter.recipeListItems = recipeList
-                recipeListAdapter.notifyDataSetChanged()
-            }
-        }
-    }
 }
