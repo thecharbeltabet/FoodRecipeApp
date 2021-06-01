@@ -31,7 +31,7 @@
             app:layout_constraintVertical_bias="0.0">
 
             <TextView
-                android:id="@+id/DishName"
+                android:id="@+id/recipeName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Dish Name"
@@ -39,7 +39,7 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/RecipeID"
+                android:id="@+id/recipeDiscription"
                 android:layout_width="match_parent"
                 android:layout_height="39dp"
                 android:text="Dish discription"
@@ -58,7 +58,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/recipeImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/burger" />

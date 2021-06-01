@@ -127,13 +127,14 @@
             android:id="@+id/signInWithText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
             android:text="Sign In With:"
             android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mainView"
-            app:layout_constraintVertical_bias="0.120000005" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <View
             android:id="@+id/googleView"
@@ -143,10 +144,10 @@
             android:clickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.252"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signUpText"
-            app:layout_constraintVertical_bias="0.65" />
+            app:layout_constraintTop_toBottomOf="@+id/signInWithText"
+            app:layout_constraintVertical_bias="0.327" />
 
         <ImageView
             android:id="@+id/googleLogo"
@@ -169,42 +170,6 @@
             app:layout_constraintEnd_toEndOf="@+id/googleView"
             app:layout_constraintStart_toStartOf="@+id/googleView"
             app:layout_constraintTop_toTopOf="@+id/googleView"
-            app:layout_constraintVertical_bias="0.107" />
-
-        <View
-            android:id="@+id/facebookView"
-            android:layout_width="114dp"
-            android:layout_height="127dp"
-            android:background="@drawable/rounded_square"
-            android:clickable="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.75"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signUpText"
-            app:layout_constraintVertical_bias="0.65" />
-
-        <ImageView
-            android:id="@+id/facebookLogo"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:clickable="true"
-            app:layout_constraintBottom_toBottomOf="@+id/facebookView"
-            app:layout_constraintEnd_toEndOf="@+id/facebookView"
-            app:layout_constraintStart_toStartOf="@+id/facebookView"
-            app:layout_constraintTop_toBottomOf="@+id/facebookLabel"
-            app:srcCompat="@drawable/ic_facebook_f_logo" />
-
-        <TextView
-            android:id="@+id/facebookLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Facebook"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/facebookView"
-            app:layout_constraintEnd_toEndOf="@+id/facebookView"
-            app:layout_constraintStart_toStartOf="@+id/facebookView"
-            app:layout_constraintTop_toTopOf="@+id/facebookView"
             app:layout_constraintVertical_bias="0.107" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
