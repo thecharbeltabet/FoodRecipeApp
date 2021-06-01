@@ -22,8 +22,7 @@ class MainScreenFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_main_screen, container, false)
-        val binding: FragmentMainScreenBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_main_screen, container, false)
-        val query = FirebaseFirestore.getInstance().collection("recipe").orderBy("Name")
+        val query = FirebaseFirestore.getInstance().collection("recipes").orderBy("name")
         val options =  FirestoreRecyclerOptions.Builder<Recipe>().setQuery(query,Recipe::class.java).build()
         val adapter = RecyclerViewAdapter(options)
         val recyclerView = view.recyclerView
