@@ -36,7 +36,7 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.createAccountButton.setOnClickListener{
             register()
-            Globalvars.name = binding.usernameInput2.text.toString()
+
 
 
         }
