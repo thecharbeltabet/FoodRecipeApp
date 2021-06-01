@@ -105,7 +105,6 @@
             android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="@+id/mainView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.489"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/usernameInput3"
             app:layout_constraintVertical_bias="0.120000005" />
@@ -119,7 +118,6 @@
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="@+id/mainView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.478"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/mainView"
             app:layout_constraintVertical_bias="0.261" />
@@ -146,7 +144,6 @@
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="@+id/mainView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.47"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/usernameInput2"
             app:layout_constraintVertical_bias="0.100000024" />
