@@ -6,8 +6,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_layout.view.*
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter
+import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import androidx.navigation.findNavController
+import com.google.firebase.firestore.DocumentSnapshot
 
-class RecyclerViewAdapter:RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(){
+class RecyclerViewAdapter(options: FirestoreRecyclerOptions<Recipe>): FirestoreRecyclerAdapter<Recipe, RecyclerViewAdapter.ViewHolder>(options){
 
     private var recipeList = mutableListOf<Recipe>()
 
@@ -21,16 +25,6 @@ class RecyclerViewAdapter:RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>()
         return recipeList.size
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val entry = recipeList[position]
-        holder.itemView.DishName.text = entry.name.toString()
-        holder.itemView.RecipeID.text = entry.recipeID.toString()
-
-        holder.itemView.setOnClickListener(){
-            Toast.makeText(holder.itemView.context, "You Have Clicked Recycler View Item ${position + 1}", Toast.LENGTH_SHORT ).show()
-        }
-    }
-
     fun setData(recipes:MutableList<Recipe>){
         recipeList = recipes
         notifyDataSetChanged()
@@ -38,5 +32,14 @@ class RecyclerViewAdapter:RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>()
     fun addData(recipe:Recipe){
         recipeList.add(recipe)
         notifyDataSetChanged()
+    }
+
+    override fun onBindViewHolder(holder: RecyclerViewAdapter.ViewHolder, position: Int, model: Recipe) {
+        holder.itemView.DishName.text = model.name.toString()
+        holder.itemView.RecipeID.text = model.recipeID.toString()
+
+        holder.itemView.setOnClickListener{
+            Toast.makeText(holder.itemView.context, "You have clicked firebase recycler view", Toast.LENGTH_SHORT).show()
+        }
     }
 }

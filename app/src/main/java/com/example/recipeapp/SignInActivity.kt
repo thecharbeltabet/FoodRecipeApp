@@ -15,7 +15,7 @@ class SignInActivity : AppCompatActivity() {
 
         binding.logInButton.setOnClickListener{
             startActivity(Intent(this, MainActivity::class.java))
-            //finish()
+            finish()
         }
         binding.signUpText.setOnClickListener{
             startActivity(Intent(this, RegisterActivity::class.java))
