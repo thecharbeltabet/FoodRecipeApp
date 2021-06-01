@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
 
 
-        populateCards(RecyclerViewAdapter())
+        populateCards(adapter)
     }
 
     private fun populateCards(adapter:RecyclerViewAdapter) {
