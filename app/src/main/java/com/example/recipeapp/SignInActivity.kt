@@ -57,6 +57,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
 
+
     private fun signIn() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
@@ -105,21 +106,25 @@ class SignInActivity : AppCompatActivity() {
 
 
 
-    private fun emailSignIn(){
-        if(!TextUtils.isEmpty(binding.emailInput.text.toString()) && !TextUtils.isEmpty(binding.passwordInput.text.toString())){
-            firebaseAuth.signInWithEmailAndPassword(binding.emailInput.text.toString(),binding.passwordInput.text.toString())
-                .addOnCompleteListener{
-                    if(it.isSuccessful){
-                        Toast.makeText(applicationContext, "Signed In!", Toast.LENGTH_LONG).show()
-                        startActivity(Intent(this,MainActivity::class.java))
+    private fun emailSignIn() {
+        if (!TextUtils.isEmpty(binding.emailInput.text.toString()) && !TextUtils.isEmpty(binding.passwordInput.text.toString())) {
+            firebaseAuth.signInWithEmailAndPassword(
+                binding.emailInput.text.toString(),
+                binding.passwordInput.text.toString()
+            )
+                .addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        Toast.makeText(applicationContext, "Successfully signed in!", Toast.LENGTH_LONG).show()
+                        startActivity(Intent(this, MainActivity::class.java))
                         finish()
-                    }
-                    else
-                    {
-                        Toast.makeText(applicationContext, "Failed!", Toast.LENGTH_LONG).show()
+                    } else {
+                        Toast.makeText(applicationContext, "Check your email and password or register!", Toast.LENGTH_LONG).show()
 
                     }
                 }
+        } else
+        {
+            Toast.makeText(applicationContext, "Enter your credentials!", Toast.LENGTH_LONG).show()
         }
     }
 }
