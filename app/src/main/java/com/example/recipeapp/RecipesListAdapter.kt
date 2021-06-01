@@ -32,6 +32,8 @@ class RecipesListAdapter(options: FirestoreRecyclerOptions<Recipe>): FirestoreRe
             val snapshot: DocumentSnapshot = snapshots.getSnapshot(position)
             Log.i("message", "snapshotID ${snapshot.id.toString()}")
 
+            val action = MainFragmentDirections.actionMainFragmentToRecipeInfoFragment(model, snapshot.id.toString())
+            holder.itemView.findNavController().navigate(action)
         }
     }
 }

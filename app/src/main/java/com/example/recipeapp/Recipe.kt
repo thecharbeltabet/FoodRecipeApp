@@ -1,7 +1,12 @@
 package com.example.recipeapp
 
-class Recipe {
-    val name: String = ""
-    val description: String = ""
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+
+@Parcelize
+data class Recipe(
+    val name: String = "",
+    val description: String = "",
     val recipePictureURI: String = ""
-}
+):Parcelable

@@ -6,15 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".RecipeInfoFragment">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="278dp"
-        android:layout_height="273dp"
-        android:src="@drawable/burger"
+
+    <TextView
+        android:id="@+id/recipeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recipe Name"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187" />
+        app:layout_constraintVertical_bias="0.071" />
+
+    <TextView
+        android:id="@+id/recipeDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/recipeName" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="246dp"
+        android:layout_height="266dp"
+        android:src="@drawable/burger"
+        app:layout_constraintBottom_toTopOf="@+id/recipeDescription"
+        app:layout_constraintEnd_toEndOf="@+id/recipeName"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="@+id/recipeName"
+        app:layout_constraintTop_toBottomOf="@+id/recipeName"
+        app:layout_constraintVertical_bias="0.194" />
 </androidx.constraintlayout.widget.ConstraintLayout>
