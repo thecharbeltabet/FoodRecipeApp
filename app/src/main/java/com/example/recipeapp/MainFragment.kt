@@ -1,6 +1,7 @@
 package com.example.recipeapp
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
@@ -9,6 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.firebase.FirebaseApiNotAvailableException
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_main.view.*
 
@@ -48,7 +51,8 @@ class MainFragment : Fragment() {
         if(item.itemId == R.id.aboutUsItem){
             Toast.makeText(context, "About Us", Toast.LENGTH_LONG).show()
         }else if(item.itemId == R.id.signOutItem){
-            Toast.makeText(context, "Sign Out", Toast.LENGTH_LONG).show()
+            FirebaseAuth.getInstance().signOut()
+            startActivity(Intent(activity, SignInActivity::class.java))
         }
         return super.onOptionsItemSelected(item)
     }

@@ -32,7 +32,7 @@ class UserRecipesListAdapter(options: FirestoreRecyclerOptions<Recipe>): Firesto
             val snapshot: DocumentSnapshot = snapshots.getSnapshot(position)
             Log.i("message", "snapshotID ${snapshot.id.toString()}")
 
-            val action = UserRecipesFragmentDirections.actionUserRecipesFragmentToUserRecipeInfoFragment(model, snapshot.id)
+            val action = UserRecipesFragmentDirections.actionUserRecipesFragmentToUserRecipeInfoFragment(snapshot.id, model)
             holder.itemView.findNavController().navigate(action)
         }
     }

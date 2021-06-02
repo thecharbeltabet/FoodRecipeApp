@@ -46,64 +46,10 @@ class SignInActivity : AppCompatActivity() {
             emailSignIn()
         }
 
-        binding.googleLogo.setOnClickListener{
-            signIn()
-        }
-
         binding.signUpText.setOnClickListener{
             startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
-
-
-
-    private fun signIn() {
-        val signInIntent = googleSignInClient.signInIntent
-        startActivityForResult(signInIntent, RC_SIGN_IN)
-    }
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-        if (requestCode == RC_SIGN_IN) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-
-            if(task.isSuccessful){
-                try {
-                    // Google Sign In was successful, authenticate with Firebase
-                    val account = task.getResult(ApiException::class.java)!!
-                    Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
-                    firebaseAuthWithGoogle(account.idToken!!)
-                } catch (e: ApiException) {
-                    // Google Sign In failed, update UI appropriately
-                    Log.w(TAG, "Google sign in failed", e)
-                }
-            }
-            else{
-                Log.w(TAG,task.exception.toString())
-            }
-        }
-    }
-    private fun firebaseAuthWithGoogle(idToken: String) {
-        val credential = GoogleAuthProvider.getCredential(idToken, null)
-
-        firebaseAuth.signInWithCredential(credential)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Toast.makeText(applicationContext, "Success!", Toast.LENGTH_LONG).show()
-                    startActivity(Intent(this,MainActivity::class.java))
-                    finish()
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Toast.makeText(applicationContext, "Failed!", Toast.LENGTH_LONG).show()
-                }
-            }
-    }
-
-
-
-
 
     private fun emailSignIn() {
         if (!TextUtils.isEmpty(binding.emailInput.text.toString()) && !TextUtils.isEmpty(binding.passwordInput.text.toString())) {

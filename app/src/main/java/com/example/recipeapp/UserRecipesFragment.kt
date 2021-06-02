@@ -27,7 +27,7 @@ class UserRecipesFragment : Fragment() {
 
         var user = getEmail()
 
-        val query = FirebaseFirestore.getInstance().collection("recipes").whereEqualTo("userEmail",user).orderBy("name")
+        val query = FirebaseFirestore.getInstance().collection("recipes").orderBy("name").whereEqualTo("userEmail",user)
         val options = FirestoreRecyclerOptions.Builder<Recipe>().setQuery(query, Recipe::class.java).build()
         val adapter = UserRecipesListAdapter(options)
         val recyclerView = view.recyclerViewUser

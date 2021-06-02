@@ -3,5 +3,5 @@
 
     <item
         android:id="@+id/deleteOverflow"
-        android:title="Delete Fragment" />
+        android:title="Delete Recipe" />
 </menu>

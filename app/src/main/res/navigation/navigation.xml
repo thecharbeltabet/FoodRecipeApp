@@ -52,10 +52,7 @@
     <fragment
         android:id="@+id/userRecipeInfoFragment"
         android:name="com.example.recipeapp.UserRecipeInfoFragment"
-        android:label="Delete Your Recipe">
-        <argument
-            android:name="recipe"
-            app:argType="com.example.recipeapp.Recipe" />
+        android:label="Your Recipe">
         <argument
             android:name="recipeID"
             app:argType="string" />
@@ -63,5 +60,8 @@
             android:id="@+id/action_userRecipeInfoFragment_to_userRecipesFragment"
             app:destination="@id/userRecipesFragment"
             app:popUpTo="@id/mainFragment" />
+        <argument
+            android:name="recipe"
+            app:argType="com.example.recipeapp.Recipe" />
     </fragment>
 </navigation>

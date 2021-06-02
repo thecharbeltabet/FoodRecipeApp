@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import kotlinx.android.synthetic.main.fragment_recipe_info.view.*
+import kotlinx.android.synthetic.main.fragment_recipe_info.view.recipeDescription
+import kotlinx.android.synthetic.main.fragment_recipe_info.view.recipeName
+import kotlinx.android.synthetic.main.fragment_user_recipe_info.view.*
 
 class UserRecipeInfoFragment : Fragment() {
     private val args by navArgs<UserRecipeInfoFragmentArgs>()
@@ -17,11 +19,12 @@ class UserRecipeInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_recipe_info, container, false)
+        val view = inflater.inflate(R.layout.fragment_user_recipe_info, container, false)
         recipeViewModel = ViewModelProvider(this).get(RecipeViewModel::class.java)
 
-        view.recipeName.setText(args.recipe.name)
-        view.recipeDescription.setText(args.recipe.description)
+        view.recipeName.text = args.recipe.name
+        view.recipeDescription.text = args.recipe.description
+        view.recipeIng.text = args.recipe.ing
 
         setHasOptionsMenu(true)
         return view

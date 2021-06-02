@@ -14,8 +14,8 @@ class FirebaseRecipeRepository() {
 
     fun readAllRecipes():LiveData<List<Recipe>> {
         var recipes = MutableLiveData<List<Recipe>>()
-        firestoreDB.collection("notes")
-            .orderBy("title")
+        firestoreDB.collection("recipes")
+            .orderBy("name")
             .addSnapshotListener{ snapshot, e ->
                 if (e != null) {
                     Log.i("message", "Listen failed.", e)
@@ -24,11 +24,11 @@ class FirebaseRecipeRepository() {
 
                 if (snapshot != null) {
                     var snapshotList:List<DocumentSnapshot> = snapshot.documents
-                    var notesList : MutableList<Recipe> = mutableListOf()
+                    var recipeList : MutableList<Recipe> = mutableListOf()
                     for(snapshot: DocumentSnapshot in snapshotList){
-                        notesList.add(snapshot.toObject(Recipe::class.java)!!)
+                        recipeList.add(snapshot.toObject(Recipe::class.java)!!)
                     }
-                    recipes.value = notesList
+                    recipes.value = recipeList
                     Log.i("message", "Current data: ${snapshot.documents}")
                 } else {
                     Log.i("message", "Current data: null")
