@@ -49,7 +49,7 @@ class MainFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.aboutUsItem){
-            Toast.makeText(context, "About Us", Toast.LENGTH_LONG).show()
+            findNavController().navigate(R.id.action_mainFragment_to_aboutUsFragment)
         }else if(item.itemId == R.id.signOutItem){
             FirebaseAuth.getInstance().signOut()
             startActivity(Intent(activity, SignInActivity::class.java))

@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_mainFragment_to_userRecipesFragment"
             app:destination="@id/userRecipesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
     </fragment>
     <fragment
         android:id="@+id/recipeInfoFragment"
@@ -64,4 +67,9 @@
             android:name="recipe"
             app:argType="com.example.recipeapp.Recipe" />
     </fragment>
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.example.recipeapp.AboutUsFragment"
+        android:label="About Charbel And Johnny"
+        tools:layout="@layout/fragment_about_us" />
 </navigation>
