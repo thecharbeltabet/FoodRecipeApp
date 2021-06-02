@@ -32,5 +32,13 @@
         android:id="@+id/userRecipesFragment"
         android:name="com.example.recipeapp.UserRecipesFragment"
         android:label="fragment_user_recipes"
-        tools:layout="@layout/fragment_user_recipes" />
+        tools:layout="@layout/fragment_user_recipes" >
+        <action
+            android:id="@+id/action_userRecipesFragment_to_newRecipeFragment"
+            app:destination="@id/newRecipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newRecipeFragment"
+        android:name="com.example.recipeapp.NewRecipeFragment"
+        android:label="NewRecipeFragment" />
 </navigation>

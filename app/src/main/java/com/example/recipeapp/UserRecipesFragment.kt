@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.android.synthetic.main.fragment_user_recipes.view.*
@@ -31,6 +33,9 @@ class UserRecipesFragment : Fragment() {
 
         recipeViewModel = ViewModelProvider(this).get(RecipeViewModel::class.java)
 
+        view.floatingActionButton.setOnClickListener {
+            findNavController().navigate(R.id.action_userRecipesFragment_to_newRecipeFragment)
+        }
 
         return view
     }
