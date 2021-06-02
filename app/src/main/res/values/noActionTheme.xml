@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.RecipeApp" parent="Theme.MaterialComponents">
+    <style name="Theme.RecipeApp.NoActionBar" parent="Theme.MaterialComponents.NoActionBar">
         <item name="android:windowBackground">@color/backgroundDark</item>
         <item name="android:editTextBackground">@color/lightGrey</item>
         <item name="android:textColor">@color/white</item>

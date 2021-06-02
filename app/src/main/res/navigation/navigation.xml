@@ -3,24 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
+    android:label=" "
     app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.recipeapp.MainFragment"
-        android:label="MainFragment" >
+        android:label="Our Food">
         <action
             android:id="@+id/action_mainFragment_to_recipeInfoFragment"
             app:destination="@id/recipeInfoFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_userRecipesFragment"
+            app:destination="@id/userRecipesFragment" />
     </fragment>
     <fragment
         android:id="@+id/recipeInfoFragment"
         android:name="com.example.recipeapp.RecipeInfoFragment"
-        android:label="fragment_recipe_info2"
-        tools:layout="@layout/fragment_recipe_info" >
-        <argument android:name="recipe"
+        android:label=" "
+        tools:layout="@layout/fragment_recipe_info">
+        <argument
+            android:name="recipe"
             app:argType="com.example.recipeapp.Recipe" />
         <argument
             android:name="ID"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/userRecipesFragment"
+        android:name="com.example.recipeapp.UserRecipesFragment"
+        android:label="fragment_user_recipes"
+        tools:layout="@layout/fragment_user_recipes" />
 </navigation>
