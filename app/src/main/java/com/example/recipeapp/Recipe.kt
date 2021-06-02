@@ -8,5 +8,7 @@ import kotlinx.android.parcel.Parcelize
 data class Recipe(
     val name: String = "",
     val description: String = "",
+    val ing: String = "",
+    val userEmail: String = "",
     val recipePictureURI: String = ""
 ):Parcelable

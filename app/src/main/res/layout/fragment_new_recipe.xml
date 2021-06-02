@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UpdateRecipeFragment">
+    tools:context=".NewRecipeFragment">
 
     <TextView
         android:id="@+id/textView4"
@@ -23,14 +23,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName6"
+        app:layout_constraintBottom_toTopOf="@+id/recipeNameInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/recipeNameInput"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
@@ -50,14 +50,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Description"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine5"
+        app:layout_constraintBottom_toTopOf="@+id/recipeDescriptionInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
+        app:layout_constraintTop_toBottomOf="@+id/recipeNameInput" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine5"
+        android:id="@+id/recipeDescriptionInput"
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginStart="32dp"
@@ -73,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine6"
+        android:id="@+id/recipeIngredientsInput"
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginStart="32dp"
@@ -82,7 +82,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/saveButton"
+        app:layout_constraintBottom_toTopOf="@+id/addButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,14 +93,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ingredients"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine6"
+        app:layout_constraintBottom_toTopOf="@+id/recipeIngredientsInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine5" />
+        app:layout_constraintTop_toBottomOf="@+id/recipeDescriptionInput" />
 
     <Button
-        android:id="@+id/saveButton"
+        android:id="@+id/addButton"
         android:layout_width="157dp"
         android:layout_height="73dp"
         android:text="Add"
@@ -108,7 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine6" />
+        app:layout_constraintTop_toBottomOf="@+id/recipeIngredientsInput" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

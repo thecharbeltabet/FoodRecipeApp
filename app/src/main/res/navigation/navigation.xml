@@ -31,14 +31,37 @@
     <fragment
         android:id="@+id/userRecipesFragment"
         android:name="com.example.recipeapp.UserRecipesFragment"
-        android:label="fragment_user_recipes"
-        tools:layout="@layout/fragment_user_recipes" >
+        android:label="Your Food"
+        tools:layout="@layout/fragment_user_recipes">
         <action
             android:id="@+id/action_userRecipesFragment_to_newRecipeFragment"
             app:destination="@id/newRecipeFragment" />
+        <action
+            android:id="@+id/action_userRecipesFragment_to_userRecipeInfoFragment"
+            app:destination="@id/userRecipeInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/newRecipeFragment"
         android:name="com.example.recipeapp.NewRecipeFragment"
-        android:label="NewRecipeFragment" />
+        android:label="Add Your New Recipe">
+        <action
+            android:id="@+id/action_newRecipeFragment_to_userRecipesFragment"
+            app:destination="@id/userRecipesFragment"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userRecipeInfoFragment"
+        android:name="com.example.recipeapp.UserRecipeInfoFragment"
+        android:label="Delete Your Recipe">
+        <argument
+            android:name="recipe"
+            app:argType="com.example.recipeapp.Recipe" />
+        <argument
+            android:name="recipeID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_userRecipeInfoFragment_to_userRecipesFragment"
+            app:destination="@id/userRecipesFragment"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
 </navigation>

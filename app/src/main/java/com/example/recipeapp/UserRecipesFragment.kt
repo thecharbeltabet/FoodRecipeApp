@@ -10,7 +10,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.android.synthetic.main.fragment_user_recipes.view.*
 
@@ -23,9 +25,11 @@ class UserRecipesFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_user_recipes, container, false)
 
-        val query = FirebaseFirestore.getInstance().collection("recipes").orderBy("name")
+        var user = getEmail()
+
+        val query = FirebaseFirestore.getInstance().collection("recipes").whereEqualTo("userEmail",user).orderBy("name")
         val options = FirestoreRecyclerOptions.Builder<Recipe>().setQuery(query, Recipe::class.java).build()
-        val adapter = RecipesListAdapter(options)
+        val adapter = UserRecipesListAdapter(options)
         val recyclerView = view.recyclerViewUser
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -39,5 +43,17 @@ class UserRecipesFragment : Fragment() {
 
         return view
     }
+    private fun getEmail(): String {
 
+        val user = Firebase.auth.currentUser
+        var uid = ""
+        user?.let {
+            for (profile in it.providerData) {
+
+                uid = profile.uid.toString()
+
+
+            }}
+        return uid.toString()
+    }
 }

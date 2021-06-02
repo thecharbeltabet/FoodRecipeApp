@@ -21,7 +21,7 @@ class MainFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_main, container, false)
 
-        val query = FirebaseFirestore.getInstance().collection("recipes").orderBy("name")
+        val query = FirebaseFirestore.getInstance().collection("recipes").whereEqualTo("userEmail","null").orderBy("name")
         val options = FirestoreRecyclerOptions.Builder<Recipe>().setQuery(query, Recipe::class.java).build()
         val adapter = RecipesListAdapter(options)
         val recyclerView = view.recyclerView
