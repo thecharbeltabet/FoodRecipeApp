@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.google.firebase.auth.FirebaseAuth
 
 @Suppress("DEPRECATION")
 class SplashScreenActivity : AppCompatActivity() {
@@ -16,8 +17,16 @@ class SplashScreenActivity : AppCompatActivity() {
         handler = Handler()
 
         handler.postDelayed({
-            startActivity(Intent(this, SignInActivity::class.java))
-            finish()
+            if (FirebaseAuth.getInstance().currentUser != null){
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+
+            }
+            else{
+                startActivity(Intent(this, SignInActivity::class.java))
+                finish()
+            }
         }, 3000)
     }
 }

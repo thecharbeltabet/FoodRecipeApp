@@ -25,22 +25,21 @@
         android:layout_height="wrap_content"
         android:text="Description"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/recipeInfoImage"
+        app:layout_constraintStart_toStartOf="@+id/recipeInfoImage"
         app:layout_constraintTop_toBottomOf="@+id/recipeName" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/recipeInfoImage"
         android:layout_width="246dp"
         android:layout_height="266dp"
-        android:src="@drawable/burger"
+        android:src="@drawable/ic_fast_food"
         app:layout_constraintBottom_toTopOf="@+id/recipeDescription"
         app:layout_constraintEnd_toEndOf="@+id/recipeName"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="@+id/recipeName"
         app:layout_constraintTop_toBottomOf="@+id/recipeName"
-        app:layout_constraintVertical_bias="0.194"
-        app:srcCompat="@drawable/ic_fast_food" />
+        app:layout_constraintVertical_bias="0.194" />
 
     <TextView
         android:id="@+id/recipeIng"

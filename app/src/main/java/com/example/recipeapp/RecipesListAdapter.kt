@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.DocumentSnapshot
@@ -28,6 +29,7 @@ class RecipesListAdapter(options: FirestoreRecyclerOptions<Recipe>): FirestoreRe
         // Set the title for the recyclerView row
         holder.itemView.recipeName.text = model.name.toString()
         holder.itemView.recipeDiscription.text = model.description.toString()
+        holder.itemView.recipeImage?.load(model.recipePictureURI.toString())
 
         holder.itemView.setOnClickListener(){
             val snapshot: DocumentSnapshot = snapshots.getSnapshot(position)
