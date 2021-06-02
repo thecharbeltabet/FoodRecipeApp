@@ -1,10 +1,10 @@
 package com.example.recipeapp
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -35,6 +35,21 @@ class MainFragment : Fragment() {
             findNavController().navigate(R.id.action_mainFragment_to_userRecipesFragment)
         }
 
+        setHasOptionsMenu(true)
         return view
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater?.inflate(R.menu.main_fragment_overflow, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.aboutUsItem){
+            Toast.makeText(context, "About Us", Toast.LENGTH_LONG).show()
+        }else if(item.itemId == R.id.signOutItem){
+            Toast.makeText(context, "Sign Out", Toast.LENGTH_LONG).show()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
